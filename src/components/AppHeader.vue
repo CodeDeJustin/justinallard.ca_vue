@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /*********************/
 /* CLASSES GÉNÉRALES */
 /*********************/
@@ -180,6 +180,11 @@ img {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+#app {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /****************/

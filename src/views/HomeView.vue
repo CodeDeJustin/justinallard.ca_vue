@@ -123,7 +123,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /*********************/
 /* CLASSES GÉNÉRALES */
 /*********************/
@@ -209,7 +209,6 @@ body[data-theme="dark"] {
 .transition-enabled .section-polygone-haut,
 .transition-enabled .section-polygone-haut p,
 .transition-enabled h2,
-.transition-enabled p,
 .transition-enabled img.col-contenu,
 .transition-enabled .col-contenu-img,
 .transition-enabled .profile-pic,
@@ -228,6 +227,7 @@ body[data-theme="dark"] {
   box-sizing: border-box;
 }
 
+html,
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,6 +239,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+  padding: 0;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   -webkit-transform-style: preserve-3d;
@@ -254,6 +255,11 @@ img {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+#app {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /****************/
@@ -497,6 +503,15 @@ img.col-contenu {
   padding: 0;
 }
 
+.profile-pic {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
 div.col-contenu {
   width: 60%;
   padding-left: 16px;
@@ -504,6 +519,12 @@ div.col-contenu {
 
 .float-right {
   float: right;
+}
+
+.profile-pic:hover {
+  transform: scale(1.025) rotate(1deg);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
 }
 
 /******************/
@@ -548,126 +569,6 @@ div.col-contenu {
   height: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 150vh, 0% 100%);
   z-index: 1;
-}
-
-/*************/
-/* CARROUSEL */
-/*************/
-#drag-container,
-#spin-container {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  width: 40vw;
-  height: 35vh;
-  display: flex;
-  margin: auto;
-  pointer-events: auto;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform: rotateX(-10deg);
-  transform: rotateX(-10deg);
-  z-index: 0;
-}
-
-#drag-container img,
-#drag-container video {
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  line-height: 200px;
-  font-size: 50px;
-  text-align: center;
-  -webkit-box-shadow: 0 0 8px #fff;
-  box-shadow: 0 0 8px #fff;
-  -webkit-box-reflect: below 10px
-    linear-gradient(transparent, transparent, #0005);
-}
-
-#drag-container img:hover,
-#drag-container video:hover {
-  -webkit-box-shadow: 0 0 15px #fffd;
-  box-shadow: 0 0 15px #fffd;
-  -webkit-box-reflect: below 10px
-    linear-gradient(transparent, transparent, #0007);
-}
-
-#drag-container p {
-  font-family: Serif;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%) rotateX(90deg);
-  transform: translate(-50%, -50%) rotateX(90deg);
-  color: #fff;
-}
-
-#ground {
-  width: 900px;
-  height: 900px;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%) rotateX(90deg);
-  transform: translate(-50%, -50%) rotateX(90deg);
-  background: -webkit-radial-gradient(
-    center center,
-    farthest-side,
-    #9993,
-    transparent
-  );
-}
-
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
-
-  to {
-    -webkit-transform: rotateY(360deg);
-    transform: rotateY(360deg);
-  }
-}
-
-@keyframes spin {
-  from {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
-
-  to {
-    -webkit-transform: rotateY(360deg);
-    transform: rotateY(360deg);
-  }
-}
-
-@-webkit-keyframes spinRevert {
-  from {
-    -webkit-transform: rotateY(360deg);
-    transform: rotateY(360deg);
-  }
-
-  to {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
-}
-
-@keyframes spinRevert {
-  from {
-    -webkit-transform: rotateY(360deg);
-    transform: rotateY(360deg);
-  }
-
-  to {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
 }
 
 /************************/

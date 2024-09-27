@@ -11,7 +11,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /*********************/
 /* CLASSES GÉNÉRALES */
 /*********************/
@@ -143,6 +143,11 @@ img {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+#app {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /****************/
@@ -326,9 +331,9 @@ header.cover p {
   transform: scale(1.2);
 }
 
-/***********/
-/* SECTION */
-/***********/
+/************/
+/* SECTIONS */
+/************/
 .section {
   padding-left: 40px;
   padding-right: 40px;
@@ -419,6 +424,7 @@ div.col-contenu {
   display: inline-block;
   padding-left: 8px;
   height: 75px;
+  z-index: 9999;
 }
 
 .texte-avec-ligne-verticale p {
