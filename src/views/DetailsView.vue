@@ -10,17 +10,8 @@
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue';
-import AppFooter from '@/components/AppFooter.vue';
-import AppPolygone from '@/components/AppPolygone.vue';
-
 export default {
   name: 'DetailsView',
-  components: {
-    AppHeader,
-    AppFooter,
-    AppPolygone,
-  },
 };
 </script>
 

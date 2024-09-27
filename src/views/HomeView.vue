@@ -103,9 +103,23 @@ export default {
   data() {
     return {
       profile2Image: require("@/assets/media/profile2.jpg"),
-      profileImage: require("@/assets/media/profile.png"),
     };
   },
+  mounted() {
+    this.loadScript();
+  },
+  methods: {
+    loadScript() {
+      const existingScript = document.getElementById('custom-script');
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.id = 'custom-script';
+        script.src = '@/scripts/script.js';
+        script.onload = () => console.log('Script loaded successfully');
+        document.body.appendChild(script);
+      }
+    }
+  }
 };
 </script>
 

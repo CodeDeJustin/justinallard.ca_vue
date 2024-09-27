@@ -2,7 +2,7 @@
   <div>
     <!-- HEADER -->
     <header>
-      <!-- Le contenu de votre en-tête -->
+      <!-- En construction -->
     </header>
 
     <!-- MAIN CONTENT -->
@@ -105,19 +105,19 @@
 
     <!-- FOOTER -->
     <footer>
-      <!-- Le contenu de votre pied de page -->
+      <!-- En construction -->
     </footer>
   </div>
 </template>
 
 <script>
-import Particles from 'particlesjs';
+import { init as initParticles } from 'particles.js';
 
 export default {
   name: 'OutilsView',
   mounted() {
     // Particles.js Initialization
-    Particles.init({
+    initParticles({
       selector: ".background",
       color: ["#3576E2", "#ff0266", "#000000"],
       connectParticles: true,
